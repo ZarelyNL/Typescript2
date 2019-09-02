@@ -1,13 +1,8 @@
-function* generator() {
-        try {
-            yield 'foo';
-            throw Error("Test");
-        }
-        catch(err) {
-            console.log(err.message);
-        }
+async function foo() {
+    try {
+    var val = await getMeAPromise();
+    console.log(val);
     }
-    var iterator = generator();
-    var foo = iterator.next();
-    console.log(foo.value);
-    var foo = iterator.next();
+    catch(err) {
+    console.log('Error: ', err.message);
+    }
