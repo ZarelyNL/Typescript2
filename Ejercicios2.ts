@@ -1,9 +1,4 @@
-class Person {
-    constructor(public age:number) {}
-    growOld = () => {
-    this.age++;
-    }
-    }
-    var person = new Person(1);
-    setTimeout(person.growOld,1000);
-    setTimeout(function() { console.log(person.age); },2000);
+var obj = {x: 1, y: 2, z: 3};
+console.log(obj.x);
+var {x, y, z} = obj;
+console.log(x);
