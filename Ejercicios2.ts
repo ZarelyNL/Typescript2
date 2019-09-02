@@ -1,6 +1,6 @@
-function Person(age: number) {
-    this.age = age
-    this.growOld = () => {
+class Person {
+    constructor(public age:number) {}
+    growOld = () => {
     this.age++;
     }
     }
