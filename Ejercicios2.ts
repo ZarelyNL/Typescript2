@@ -1,4 +1,4 @@
-var obj = {x: 1, y: 2, z: 3};
-console.log(obj.x);
-var {x, y, z} = obj;
+var array = [1, 2, 3];
+console.log(array[0]);
+var [x, y, z] = array;
 console.log(x);
