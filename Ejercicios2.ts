@@ -1,5 +1,8 @@
-function rest(first: string, second: string, ...allOthers: (string | undefined)[]) {
-    console.log(allOthers);
-    }
-    rest('foo', 'bar');
-    rest('foo', 'bar', 'bas', 'qux');
+const promise = new Promise((resolve: (arg0: number) => void, reject: any) => {
+    resolve(123);
+    });
+    promise.then((res: number) => {
+    console.log('I get called:', res === 123); 
+    });
+    promise.catch((err: any) => {
+    });
