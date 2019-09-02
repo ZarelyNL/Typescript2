@@ -1,13 +1,23 @@
-function iReturnPromiseAfter1Second():Promise<string> {
-    return new Promise((resolve: (arg0: string) => void)=>{
-    setTimeout(()=>resolve("Hello world!"), 1000);
-    });
-    }
-    Promise.resolve(123)
-    .then((res: any)=>{
-    return iReturnPromiseAfter1Second();
-    })
-    .then((res: any) => {
-    console.log(res);
-    });
+loadJSONAsync('good.json')
+.then(function (val: any) { console.log(val); })
+.catch(function (err: { message: any; }) {
+console.log('good.json error', err.message);
+})
+// non-existent json file
+.then(function () {
+return loadJSONAsync('absent.json');
+})
+.then(function (val: any) { console.log(val); }) 
+.catch(function (err: { message: any; }) {
+console.log('absent.json error', err.message);
+})
+// invalid json file
+.then(function () {
+return loadJSONAsync('bad.json');
+})
+.then(function (val: any) { console.log(val); })
+.catch(function (err: { message: any; }) {
+console.log('bad.json error', err.message);
+});
+
     
