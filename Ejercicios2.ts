@@ -1,23 +1,23 @@
-function loadItem(id: number): Promise<{id: number}> {
-    return new Promise((resolve: (arg0: { id: number; }) => void)=>{
-        console.log('loading item', id);
-        setTimeout(() => { 
-            resolve({ id: id });
-        }, 1000);
+function loadItem(id: number) {
+    return new Promise((resolve: (arg0: { id: any; }) => void) => {
+    console.log('loading item', id);
+    setTimeout(() => {
+    resolve({ id: id });
+    }, 1000);
     });
-}
-let item1, item2;
-loadItem(1)
-.then((res) => {
+    }
+    let item1, item2;
+    loadItem(1)
+    .then((res: any) => {
     item1 = res;
     return loadItem(2);
-})
-.then((res) => {
+    })
+    .then((res: any) => {
     item2 = res;
     console.log('done');
-});
-Promise.all([loadItem(1),loadItem(2)])
-.then((res: [any, any]) => {
-    [item1,item2] = res;
-    console.log('done')
-}); 
+    });
+    Promise.all([loadItem(1), loadItem(2)])
+    .then((res: [any, any]) => {
+    [item1, item2] = res;
+    console.log('done');
+    });
