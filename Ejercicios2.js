@@ -1,3 +1,9 @@
-var array = [1, 2, 3, 4];
-var x = array[0], y = array[1], rest = array.slice(2);
-console.log(x, y, rest);
+function rest(first, second) {
+    var allOthers = [];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        allOthers[_i - 2] = arguments[_i];
+    }
+    console.log(allOthers);
+}
+rest('foo', 'bar');
+rest('foo', 'bar', 'bas', 'qux');
